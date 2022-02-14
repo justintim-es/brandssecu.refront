@@ -1,0 +1,10 @@
+<section class="hero is-fullheight is-black is-bold">
+  <div class="hero-body">
+      <div class="container has-text-centered">
+          <div class="spinner spinner-border has-text-white" *ngIf="isFetch | async"></div>
+          <p class="title" *ngIf="!(isConfirmed | async)">
+              Please confirm your e-mail
+          </p>
+      </div>
+  </div>
+</section>

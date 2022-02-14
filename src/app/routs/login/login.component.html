@@ -1,0 +1,19 @@
+<section class="hero is-fullheight is-black is-bold">
+  <div class="hero-body">
+    <div class="container has-text-left">
+    <p class="title" @enterTransformFromUp>Login</p>
+    <p class="subtitle" @enterTransformFromUp>brand</p>
+    <mat-form-field style="width: 100%" @enterTransformFromLeft>
+      <input matInput placeholder="E-Mail" [formControl]="emailFormControl" [errorStateMatcher]="errorStateMatcher" [(ngModel)]="email" />
+      </mat-form-field>
+      <mat-form-field style="width: 100%" @enterTransformFromRight>
+        <input matInput placeholder="Password" [formControl]="passwordFormControl" [errorStateMatcher]="errorStateMatcher" [(ngModel)]="password"  />
+        <mat-error *ngIf="passwordFormControl.hasError('backend')">
+          {{ fetchErrorMessage | async }}
+        </mat-error>
+        <button mat-button (click)="login()" matSuffix>login</button>
+        <div class="spinner-border spinner-border-sm has-text-white" matSuffix *ngIf="isFetch | async"></div>
+        </mat-form-field>
+        </div>
+  </div>
+  </section>

@@ -1,0 +1,31 @@
+<section class="hero is-black is-fullheight is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered" *ngIf="isAnimationDone | async">
+      <div class="spinner spinner-border"></div>
+    </div>
+    <div class="container" *ngIf="!(isAnimationDone | async)">
+      <p class="title" @enterTransformFromUp>Register</p>
+      <p class="subtitle" @enterTransformFromUp>Brand</p>
+      <mat-form-field style="width: 100%" @leaveTransformToLeft *ngIf="!(isRegisterFetchSuccess | async)" @enterTransformFromLeft>
+        <input matInput placeholder="Brand Name" [formControl]="brandNameFormControl" [errorStateMatcher]="errorStateMatcher" [(ngModel)]="brandName" />
+        <mat-error *ngIf="brandNameFormControl.hasError('backend')">
+          {{ fetchErrorMessage | async }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field style="width: 100%" @enterTransformFromRight *ngIf="!(isRegisterFetchSuccess | async)" @leaveTransformToRight>
+        <input matInput placeholder="E-Mail" [formControl]="emailFormControl" [errorStateMatcher]="errorStateMatcher" [(ngModel)]="email" />
+        <mat-error *ngIf="emailFormControl.hasError('backend')">
+          {{ fetchErrorMessage | async }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field style="width: 100%" @enterTransformFromLeft @leaveTransformToLeft *ngIf="!(isRegisterFetchSuccess | async)">
+        <input matInput placeholder="Password" type="password" [formControl]="passwordFormControl" [errorStateMatcher]="errorStateMatcher" [(ngModel)]="password" />
+        <mat-error *ngIf="passwordFormControl.hasError('backend')">
+          {{ fetchErrorMessage | async }}
+        </mat-error>
+        <button mat-button matSuffix (click)="register()">register</button>
+        <div class="spinner-border spinner-border-sm has-text-white" matSuffix *ngIf="isFetch | async"></div>
+      </mat-form-field>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+import { createAction, props } from '@ngrx/store';
+import { IActionCreator, IRegisterBrandFetch } from '../combiner';
+export const RDX_REGISTER_BRAND_FETCH  = 'RDX_REGISTER_BRAND_FETCH';
+export const rdxRegisterBrandFetch = createAction(RDX_REGISTER_BRAND_FETCH, props<IActionCreator<IRegisterBrandFetch>>());
+export const RDX_REGISTER_BRAND_FETCH_SUCCESS  = 'RDX_REGISTER_BRAND_FETCH_SUCCESS';
+export const rdxRegisterBrandFetchSuccess = createAction(RDX_REGISTER_BRAND_FETCH_SUCCESS, props<IActionCreator<IRegisterBrandFetch>>());
+export const RDX_REGISTER_BRAND_IS_BRAND_FETCH_ERROR = 'RDX_REGISTER_BRAND_IS_BRAND_FETCH_ERROR';
+export const rdxRegisterBrandIsBrandFetchError = createAction(RDX_REGISTER_BRAND_IS_BRAND_FETCH_ERROR, props<IActionCreator<string>>());
+export const RDX_REGISTER_BRAND_IS_EMAIL_FETCH_ERROR  = 'RDX_REGISTER_BRAND_IS_EMAIL_FETCH_ERROR';
+export const rdxRegisterBrandIsEmailFetchError = createAction(RDX_REGISTER_BRAND_IS_EMAIL_FETCH_ERROR, props<IActionCreator<string>>());
+export const RDX_REGISTER_BRAND_IS_PASSWORD_FETCH_ERROR = 'RDX_REGISTER_BRAND_IS_PASSWORD_FETCH_ERROR';
+export const rdxRegisterBrandIsPasswordFetchError = createAction(RDX_REGISTER_BRAND_IS_PASSWORD_FETCH_ERROR, props<IActionCreator<string>>());
+export const RDX_REGISTER_BRAND_IS_ANIMATION_DONE_TRUE  =  'RDX_REGISTER_BRAND_IS_ANIMATION_DONE_TRUE';
+export const rdxRegisterBrandIsAnimationDoneTrue = createAction(RDX_REGISTER_BRAND_IS_ANIMATION_DONE_TRUE, props<IActionCreator<any>>());

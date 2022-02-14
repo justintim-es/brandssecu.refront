@@ -1,0 +1,135 @@
+<section class="hero is-fullheight is-black is-bold">
+  <div class="is-clipped">
+  <section class="hero is-halfheight is-black is-bold" @curtainTop>
+    <div class="hero-body">
+      <p class="title">BrandsSecu.re</p>
+      <button mat-button (click)="onLeft()">
+        <mat-icon (click)="onLeft()">chevron_left</mat-icon>
+      </button>
+      <button mat-button (click)="onRight()">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+
+    </div>
+  </section>
+  <section class="hero is-halfheight is-black is-bold" @curtainBottom [@bottomSlide]="bottomState | async" *ngIf="isBottom | async">
+    <div class="hero-body">
+      <div class="container has-text-centered" *ngIf="(bottomIndex | async) == 0">
+        <nav class="level is-mobile">
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">download</p>
+              <button mat-button><p class="title">ANDROID</p></button>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">download</p>
+              <button mat-button><p class="title">IOS</p></button>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="container has-text-centered" *ngIf="(bottomIndex | async) == 1 || (bottomIndex | async) == -1">
+        <nav class="level is-mobile">
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">register</p>
+              <button mat-button><p class="title" routerLink="/register-brand">BRAND</p></button>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="container has-text-centered" *ngIf="(bottomIndex | async) == 2 || (bottomIndex | async) == -2">
+        <nav class="level is-mobile">
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">register</p>
+              <button mat-button><p class="title">SHOP</p></button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    <div class="container has-text-centered" *ngIf="(bottomIndex | async) == 3 || (bottomIndex | async) == -3">
+      <nav class="level is-mobile">
+        <div class="level-item has-text-centered">
+          <div>
+            <button mat-button><p class="title">PRICING</p></button>
+          </div>
+        </div>
+      </nav>
+  </div>
+  <div class="container has-text-centered" *ngIf="(bottomIndex | async) == 4 || (bottomIndex | async) == -4">
+    <nav class="level is-mobile">
+      <div class="level-item has-text-centered">
+        <div>
+        <button mat-button><p class="title">CONTACT</p></button>
+        </div>
+      </div>
+    </nav>
+</div>
+</div>
+
+</section>
+<div [@bottomSlide]="toBottomState | async" *ngIf="isToBottom | async">
+<section class="hero is-halfheight is-black is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered" *ngIf="(toBottomIndex | async) == 0">
+      <nav class="level is-mobile">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">download</p>
+            <button mat-button><p class="title">ANDROID</p></button>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">download</p>
+            <button mat-button><p class="title">IOS</p></button>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container has-text-centered" *ngIf="(toBottomIndex | async) == 1 || (toBottomIndex | async) == -1">
+      <nav class="level is-mobile">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">register</p>
+            <button mat-button><p class="title">BRAND</p></button>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container has-text-centered" *ngIf="(toBottomIndex | async) == 2 || (toBottomIndex | async) == -2">
+      <nav class="level is-mobile">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">register</p>
+            <button mat-button><p class="title">SHOP</p></button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  <div class="container has-text-centered" *ngIf="(toBottomIndex | async) == 3 || (toBottomIndex | async) == -3">
+    <nav class="level is-mobile">
+      <div class="level-item has-text-centered">
+        <div>
+          <button mat-button><p class="title">PRICING</p></button>
+        </div>
+      </div>
+    </nav>
+</div>
+<div class="container has-text-centered" *ngIf="(toBottomIndex | async) == 4 || (toBottomIndex | async) == -4">
+  <nav class="level is-mobile">
+    <div class="level-item has-text-centered">
+      <div>
+      <button mat-button><p class="title">CONTACT</p></button>
+      </div>
+    </div>
+  </nav>
+</div>
+  </div>
+</section>
+</div>
+</div>
+</section>
